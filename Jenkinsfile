@@ -16,5 +16,15 @@ pipeline {
           sh 'docker-compose build'
       }
     }
+    stage('Pushing Image') {
+      steps{
+          sh 'docker-compose push'
+      }
+    }
+    stage('Deploy the Applications') {
+      steps{
+          sh 'docker-compose up -d'
+      }
+    }
   }
 }
