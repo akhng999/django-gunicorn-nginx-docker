@@ -3,8 +3,8 @@ pipeline {
     registry = "akhng999/nginx"
     registryCredential = 'dockerhub'
     dockerImage = ''
-    NGINX_REPO_CERT = credentials("NGINX_REPO_DEV_CERT")
-    NGINX_REPO_KEY = credentials("NGINX_REPO_DEV_KEY")
+    NGINX_REPO_CERT = credentials("NGINX_REPO_DEV_CERT_FILE")
+    NGINX_REPO_KEY = credentials("NGINX_REPO_DEV_KEY_FILE")
    }
   agent any
   stages {
