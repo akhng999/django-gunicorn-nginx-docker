@@ -1,27 +1,27 @@
 version: "3.7"
 
 services:
-  app:
-    build: app
-    container_name: django-gunicorn
-    restart: always
-    env_file:
-      - django.env
-    ports:
-      - "8000:8000"
-    command:
-      "gunicorn --workers=2 --bind=0.0.0.0:8000 mysite.wsgi:application"
+ # app:
+ #   build: app
+ #   container_name: django-gunicorn
+ #   restart: always
+ #   env_file:
+ #     - django.env
+ #   ports:
+ #     - "8000:8000"
+ #   command:
+ #     "gunicorn --workers=2 --bind=0.0.0.0:8000 mysite.wsgi:application"
 
   nginx:
     build: nginx
     image: akhng999/nginx:nginxplus
     container_name: nginxplus
     environment: 
-      NGINX_REPO_CERT: ${NGINX_REPO_CERT}
-      NGINX_REPO_KEY: ${NGINX_REPO_KEY}
+#      NGINX_REPO_CERT: ${NGINX_REPO_CERT}
+#      NGINX_REPO_KEY: ${NGINX_REPO_KEY}
     ports:
       - "80:80"
     volumes:
       - ./nginx:/etc/nginx/conf.d
-    depends_on:
-      - app
+ #   depends_on:
+ #     - app
