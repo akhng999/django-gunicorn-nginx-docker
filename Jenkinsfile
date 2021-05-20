@@ -9,8 +9,9 @@ pipeline {
   agent any
   stages {
     stage('Building image') {
-      steps{    
-        sh "docker-compose build --build-arg=NGINX_REPO_CERT=${NGINX_REPO_CERT} --build-arg=NGINX_REPO_KEY=${NGINX_REPO_KEY}" 
+      steps{
+          sh "cp django.env.example django.env"
+          sh "docker-compose build --build-arg=NGINX_REPO_CERT=${NGINX_REPO_CERT} --build-arg=NGINX_REPO_KEY=${NGINX_REPO_KEY}" 
       }
     }
   }
