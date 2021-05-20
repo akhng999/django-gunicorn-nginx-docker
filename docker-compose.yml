@@ -8,7 +8,7 @@ services:
     restart: always
     env_file:
       - django.env
-    expose: :
+    expose:
       - "8000"
     command:
       "gunicorn --workers=2 --bind=0.0.0.0:8000 mysite.wsgi:application"
