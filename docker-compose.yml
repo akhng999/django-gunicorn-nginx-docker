@@ -16,7 +16,7 @@ services:
     build: nginx
     image: akhng999/nginx:nginxplus
     container_name: nginxplus
-    environment: 
+#    environment: 
 #      NGINX_REPO_CERT: ${NGINX_REPO_CERT}
 #      NGINX_REPO_KEY: ${NGINX_REPO_KEY}
     ports:
