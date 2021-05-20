@@ -3,7 +3,7 @@ version: "3.7"
 services:
   app:
     build: app
-    mage: akhng999/django-gunicorn
+    image: akhng999/django-gunicorn
     container_name: django-gunicorn
     restart: always
     env_file:
