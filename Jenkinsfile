@@ -11,7 +11,7 @@ pipeline {
     stage('Building image') {
       steps{    
         script {
-          dockerImage = docker.build("-f nginx/Dockerfile", "-t ${registry} + ":nginxplus"", "--build-arg=NGINX_REPO_CERT=${NGINX_REPO_CERT}", "--build-arg=NGINX_REPO_KEY=${NGINX_REPO_KEY}")
+          dockerImage = docker.build("-f nginx/Dockerfile", "-t ${registry}:nginxplus", "--build-arg=NGINX_REPO_CERT=${NGINX_REPO_CERT}", "--build-arg=NGINX_REPO_KEY=${NGINX_REPO_KEY}")
         }
       }
     }
