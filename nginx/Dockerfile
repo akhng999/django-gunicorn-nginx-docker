@@ -11,8 +11,10 @@ LABEL maintainer="NGINX Docker Maintainers <docker-maint@nginx.com>"
 
 # Download certificate and key from the customer portal (https://cs.nginx.com)
 # and copy to the build context
-RUN cat "$NGINX_REPO_CERT" > /etc/ssl/nginx/nginx-repo.crt
-RUN cat "$NGINX_REPO_KEY" > /etc/ssl/nginx/nginx-repo.key
+ARG NGINX_REPO_CERT
+ARG NGINX_REPO_KEY
+RUN echo "$NGINX_REPO_CERT" > /etc/ssl/nginx/nginx-repo.crt
+RUN echo "$NGINX_REPO_KEY" > /etc/ssl/nginx/nginx-repo.key
 
 RUN set -x \
 # Create nginx user/group first, to be consistent throughout Docker variants
