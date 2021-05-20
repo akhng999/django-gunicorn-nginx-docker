@@ -11,6 +11,8 @@ pipeline {
     stage('Building image') {
       steps{
           sh "cp django.env.example django.env"
+          sh 'echo ${NGINX_REPO_CERT} > "etc/ssl/nginx/nginx-repo.crt"'
+          sh 'echo ${NGINX_REPO_KEY} > "etc/ssl/nginx/nginx-repo.key"'
           sh 'docker-compose build'
       }
     }
