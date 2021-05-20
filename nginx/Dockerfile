@@ -13,8 +13,8 @@ LABEL maintainer="NGINX Docker Maintainers <docker-maint@nginx.com>"
 # and copy to the build context
 ARG NGINX_REPO_CERT
 ARG NGINX_REPO_KEY
-COPY etc/ssl/nginx/nginx-repo.crt > /etc/ssl/nginx/nginx-repo.crt
-COPY etc/ssl/nginx/nginx-repo.key > /etc/ssl/nginx/nginx-repo.key
+COPY nginx-repo.crt > /etc/ssl/nginx/nginx-repo.crt
+COPY nginx-repo.key > /etc/ssl/nginx/nginx-repo.key
 
 RUN set -x \
 # Create nginx user/group first, to be consistent throughout Docker variants
