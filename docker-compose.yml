@@ -5,7 +5,7 @@ services:
     build: app
     image: akhng999/django-gunicorn
 #    container_name: django-gunicorn
-    restart: always
+#    restart: always
     env_file:
       - django.env
     expose:
